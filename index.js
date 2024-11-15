@@ -10,11 +10,13 @@ const prisma = new PrismaClient();
 
 app.get("/", async (req, res) => {
 
-    const page =  1;
+    /* const page =  1;
     const limit = 50;
     const skip = (page - 1) * limit;
         const allUsers = await prisma.user.findMany();
-        res.json(allUsers); 
+        res.json(allUsers);  */
+
+        res.sendFile(__dirname+"/index.html")
    
   // console.log(req.body);
  // res.sendFile(__dirname+"/index.html")
