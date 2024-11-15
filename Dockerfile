@@ -28,7 +28,6 @@ COPY --from=build /app /app
 # Exposer le port de l'application (exemple : 3000)
 EXPOSE 3000
 
-# Commande pour démarrer l'application
-CMD ["node", "index.js"]
+CMD ["sh", "-c", "npx prisma migrate deploy && node index.js"]
 
 
