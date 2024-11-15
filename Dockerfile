@@ -28,6 +28,6 @@ COPY --from=build /app /app
 # Exposer le port de l'application (exemple : 3000)
 EXPOSE 3000
 
-CMD ["sh", "-c", "npx prisma generate && npx prisma migrate && node index.js"]
+CMD ["sh", "-c", "npx prisma generate && npx prisma migrate dev --name add_user_and_post_models && node index.js"]
 
 
