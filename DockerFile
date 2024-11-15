@@ -1,11 +1,15 @@
 FROM node:20
 
+ENV NODE_ENV=production
+
 WORKDIR /app
 
-COPY package*.json ./Dockerfile
+COPY ["package.json", "package-lock.json*", "./"]
 
-RUN npm install
+RUN npm install --production
 
 COPY . .
-EXPOSE 3000
-CMD ["nodemon", "index.js"]
+
+EXPOSE 8080
+
+CMD [ "nodemon", "index.js" ]
